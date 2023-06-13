@@ -67,28 +67,59 @@ function() {
     ageInput = parseInt(age.value);
     // console.log(ageInput);
 
+    // Nome
+    const inputName = document.getElementById(`box-name`).value;
+    const previousText = document.getElementById(`customer-name`).innerHTML = inputName;
+    console.log(inputName);
+
+    //Numero Carrozza
+    document.getElementById("carrozza").innerHTML =
+    Math.floor(Math.random() * 20) + 1;
+
+    // Codice CP
+    document.getElementById("cp-code").innerHTML =
+    Math.floor(Math.random() * 99999) + 1;
+
     // Discout
     const discountUnder18 = pricePerKm - (pricePerKm * 0.2);
     const discountOver64 = pricePerKm - (pricePerKm * 0.4);
 
+    // Offerta
+    const ticketTypeContainer = document.getElementById(`type-travel`);
+    const showTicket = ticketTypeContainer.innerHTML;
 
-    if ( ageInput > 1 && ageInput < 3 ){
+    // Prezzo biglietto
+    const priceContainer = document.getElementById(`ticket-price`);
+    const finalPrice = priceContainer.innerHTML;
 
-        console.log(discountUnder18);
 
-    } else if ( ageInput > 2) {
+    if ( ageInput > 10 && ageInput < 30 ){
 
-        console.log(discountOver64);
+        priceContainer.innerHTML = discountUnder18.toFixed(2) + " " + "€";
+        // console.log(discountUnder18);
+
+        ticketTypeContainer.innerHTML = "Biglietto Minorenni";
+        
+
+    } else if ( ageInput > 20) {
+
+        priceContainer.innerHTML = discountOver64.toFixed(2) + " " + "€";
+        // console.log(discountOver64);
+
+        ticketTypeContainer.innerHTML = "Biglietto Anziani";
 
     } else {
 
-        console.log(pricePerKm);
+        priceContainer.innerHTML = pricePerKm.toFixed(2) + " " + "€";
+        // console.log(pricePerKm);
+
+        ticketTypeContainer.innerHTML = "Biglietto Standard";
 
     }
     
-    let inputName = document.getElementById(`box-name`).value;
     
-    console.log(inputName);
+
+
 
 }
 
