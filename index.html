@@ -19,7 +19,7 @@
 </head>
 <body>
 
-    <form>
+    <!-- <form>
         <div>
             <label for="km">km</label>
             <input type="number" id="km">
@@ -30,9 +30,101 @@
 
         </div>
 
-        <button type="button" id="acquista">Acquista</button>
+        <button type="button" id="genera">Genera</button>
         <button type="reset">Svuota</button>
-    </form>
+    </form> -->
+
+    <main class="text-center bg-info">
+        <form>
+            <div class="container-fluid pt-5 px-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>
+                            Calcola Il prezzo del Tuo Biglietto
+                        </h1>
+                    </div>
+                    <div class="card-body mt-4">
+                        <div class="container">
+                            <div class="row justify-content-around">
+                                <div class="form-floating mb-3 col-3">
+                                    <input type="text" class="form-control" id="box-name" placeholder="Mario Rossi">
+                                    <label for="floatingInput" class="ms-3">Inserisci il Tuo Nome</label>
+                                </div>
+                                <div class="form-floating mb-3 col-3">
+                                    <input type="number" class="form-control" id="km" placeholder="10">
+                                    <label for="floatingInput" class="ms-3">Inserisci il numero di Km</label>
+                                </div>
+                                <div class="mb-3 col-3">
+                                    <select class="form-select h-100" aria-label="Default select example" id="age">
+                                        <option selected>Fascia d'età</option>
+                                        <option value="1">Maggiorenne</option>
+                                        <option value="2">Minorenne</option>
+                                        <option value="3">Ultra Sessant'enne</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container my-4">
+                            <div class="row justify-content-evenly">
+                                <button type="button" class="btn btn-primary col-2" id="genera">Genera</button>
+                                <button type="reset" class="btn btn-warning col-2">Annulla</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="container-fluid py-5 px-5">
+            <div class="card">
+                <div class="card-header">
+                    <h1>
+                        Il Tuo Biglietto
+                    </h1>
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row justify-content-between">
+                            <div class="card col">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nome Passeggero</h5>
+                                    <p id="customer-name">--</p>
+                                </div>
+                            </div>
+
+                            <div class="card col">
+                                <div class="card-body">
+                                    <h5 class="card-title">Offerta</h5>
+                                    <p class="card-text">--</p>
+                                </div>
+                            </div>
+
+                            <div class="card col">
+                                <div class="card-body">
+                                    <h5 class="card-title">Carrozza</h5>
+                                    <p class="card-text">--</p>
+                                </div>
+                            </div>
+
+                            <div class="card col">
+                                <div class="card-body">
+                                    <h5 class="card-title">Codice CP</h5>
+                                    <p class="card-text">--</p>
+                                </div>
+                            </div>
+
+                            <div class="card col">
+                                <div class="card-body">
+                                    <h5 class="card-title">Costo Biglietto</h5>
+                                    <p class="card-text">--</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
 
 <!-- Javascript -->

@@ -49,7 +49,7 @@
 // }
 // );
 
-const myButton = document.getElementById(`acquista`);
+const myButton = document.getElementById(`genera`);
 
 myButton.addEventListener(`click`,
 function() {
@@ -68,19 +68,15 @@ function() {
     // console.log(ageInput);
 
     // Discout
-
     const discountUnder18 = pricePerKm - (pricePerKm * 0.2);
     const discountOver64 = pricePerKm - (pricePerKm * 0.4);
 
-    if (isNaN(kmInput) || isNaN(ageInput)) {
 
-        alert("Inserire numeri");
-
-    } else if ( ageInput < 18 ){
+    if ( ageInput > 1 && ageInput < 3 ){
 
         console.log(discountUnder18);
 
-    } else if ( ageInput > 64) {
+    } else if ( ageInput > 2) {
 
         console.log(discountOver64);
 
@@ -90,8 +86,10 @@ function() {
 
     }
     
-
+    let inputName = document.getElementById(`box-name`).value;
     
+    console.log(inputName);
+
 }
 
 )
