@@ -49,81 +49,204 @@
 // }
 // );
 
+
+
+
+
 const myButton = document.getElementById(`genera`);
 
-myButton.addEventListener(`click`,
+myButton.addEventListener('click',
+
 function() {
-    // Funzione Km
-    let kmInput = document.getElementById("km");
-    kmInput = parseInt(km.value);
+    // Nome Utenete
+    const nameInput = document.getElementById(`box-name`).value;
+    let namePlace = document.getElementById('customer-name');
+    namePlace.innerHTML = nameInput;
 
-    const price = 0.21;
-    const pricePerKm = kmInput * price;
-    // console.log(pricePerKm)
-
-    // Funzione Età
-
-    let ageInput = document.getElementById(`age`);
-    ageInput = parseInt(age.value);
-    // console.log(ageInput);
-
-    // Nome
-    const inputName = document.getElementById(`box-name`).value;
-    const previousText = document.getElementById(`customer-name`).innerHTML = inputName;
-    console.log(inputName);
-
-    //Numero Carrozza
-    document.getElementById("carrozza").innerHTML =
-    Math.floor(Math.random() * 20) + 1;
-
-    // Codice CP
-    document.getElementById("cp-code").innerHTML =
-    Math.floor(Math.random() * 99999) + 1;
-
-    // Discout
-    const discountUnder18 = pricePerKm - (pricePerKm * 0.2);
-    const discountOver64 = pricePerKm - (pricePerKm * 0.4);
-
-    // Offerta
-    const ticketTypeContainer = document.getElementById(`type-travel`);
-    const showTicket = ticketTypeContainer.innerHTML;
-
-    // Prezzo biglietto
-    const priceContainer = document.getElementById(`ticket-price`);
-    const finalPrice = priceContainer.innerHTML;
+    console.log("nameInput", nameInput, typeof nameInput)
 
 
-    if ( ageInput > 10 && ageInput < 30 ){
+    // Km Viaggio
+    const kmInput = parseInt(document.getElementById(`km`).value);
 
-        priceContainer.innerHTML = discountUnder18.toFixed(2) + " " + "€";
-        // console.log(discountUnder18);
+    console.log("kminput", kmInput, typeof kmInput)
 
-        ticketTypeContainer.innerHTML = "Biglietto Minorenni";
-        
+    // Fascia età
+    const ageInput = document.getElementById(`age`).value;
 
-    } else if ( ageInput > 20) {
+    console.log("ageInput", ageInput, typeof ageInput)
 
-        priceContainer.innerHTML = discountOver64.toFixed(2) + " " + "€";
-        // console.log(discountOver64);
+    // Tipologia Biglietto
+    let ticketType = document.getElementById(`type-travel`);
 
-        ticketTypeContainer.innerHTML = "Biglietto Anziani";
+    // Carrozza
+    let numeroCarrozza = Math.floor((Math.random() * 20) + 1);
+    document.getElementById("carrozza").innerHTML = numeroCarrozza;
+
+    // Codice Biglietto
+    let codiceCp = Math.floor((Math.random() * 99999) + 10000);
+    document.getElementById("cp-code").innerHTML = codiceCp;
+
+    // Biglietto
+    const pricePerKm = 0.21;
+    const travelPrice = kmInput * pricePerKm;
+    const discountUnder18 = travelPrice - (travelPrice * 0.2);
+    const discountOver64 = travelPrice - (travelPrice * 0.4);
+
+    if (ageInput > 10 && ageInput < 30) {
+
+        let finalPrice = document.getElementById(`ticket-price`);
+        finalPrice.innerHTML = discountUnder18.toFixed(2) + " €";
+
+        ticketType.innerHTML = "Biglietto Minorenni"
+
+    } else if ( ageInput >= 30) {
+
+        let finalPrice = document.getElementById(`ticket-price`);
+        finalPrice.innerHTML = discountOver64.toFixed(2) + " €";
+
+        ticketType.innerHTML = "Biglietto Ultrasessantenni"
 
     } else {
 
-        priceContainer.innerHTML = pricePerKm.toFixed(2) + " " + "€";
-        // console.log(pricePerKm);
+        let finalPrice = document.getElementById(`ticket-price`);
+        finalPrice.innerHTML = travelPrice.toFixed(2) + " €";
 
-        ticketTypeContainer.innerHTML = "Biglietto Standard";
+        ticketType.innerHTML = "Biglietto Standard"
 
     }
-    
-    
+
+
+
 
 
 
 }
-
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const myButton = document.getElementById(`genera`);
+
+// myButton.addEventListener(`click`,
+
+// function() {
+//     // Funzione Km
+//     let kmInput = document.getElementById("km");
+//     kmInput = parseInt(km.value);
+
+//     const price = 0.21;
+//     const pricePerKm = kmInput * price;
+//     // console.log(pricePerKm)
+
+//     // Funzione Età
+
+//     let ageInput = document.getElementById(`age`).value;
+//     ageInput = parseInt(age.value);
+//     // console.log(ageInput);
+
+//     // Nome
+//     const inputName = document.getElementById(`box-name`).value;
+//     const previousText = document.getElementById(`customer-name`).innerHTML = inputName;
+//     console.log(inputName);
+
+//     //Numero Carrozza
+//     document.getElementById("carrozza").innerHTML =
+//     Math.floor(Math.random() * 20) + 1;
+
+//     // Codice CP
+//     document.getElementById("cp-code").innerHTML =
+//     Math.floor(Math.random() * 99999) + 10000;
+
+
+//     // Discout
+//     const discountUnder18 = pricePerKm - (pricePerKm * 0.2);
+//     const discountOver64 = pricePerKm - (pricePerKm * 0.4);
+
+//     // Offerta
+//     const ticketTypeContainer = document.getElementById(`type-travel`);
+//     const showTicket = ticketTypeContainer.innerHTML;
+
+//     // Prezzo biglietto
+//     const priceContainer = document.getElementById(`ticket-price`);
+//     const finalPrice = priceContainer.innerHTML;
+
+
+//     if ( ageInput > 10 && ageInput < 30 ){
+
+//         priceContainer.innerHTML = discountUnder18.toFixed(2) + " " + "€";
+//         // console.log(discountUnder18);
+
+//         ticketTypeContainer.innerHTML = "Biglietto Minorenni";
+        
+
+//     } else if ( ageInput > 20) {
+
+//         priceContainer.innerHTML = discountOver64.toFixed(2) + " " + "€";
+//         // console.log(discountOver64);
+
+//         ticketTypeContainer.innerHTML = "Biglietto Anziani";
+
+//     } else {
+
+//         priceContainer.innerHTML = pricePerKm.toFixed(2) + " " + "€";
+//         // console.log(pricePerKm);
+
+//         ticketTypeContainer.innerHTML = "Biglietto Standard";
+
+//     }
+    
+    
+
+
+
+// }
+
+// )
 
 
 
