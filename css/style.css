@@ -1,5 +1,6 @@
 .container-fluid > .card{
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
+    background-color: rgb(181, 42, 31);
 }
 

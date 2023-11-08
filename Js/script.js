@@ -122,6 +122,28 @@ function() {
 }
 )
 
+const myReset = document.getElementById('cancella');
+
+myReset.addEventListener('click', 
+function() {
+
+    let namePlace = document.getElementById('customer-name');
+    namePlace.innerHTML = '--';
+
+    let typeTravel = document.getElementById('type-travel');
+    typeTravel.innerHTML = '--';
+
+    let carrozza = document.getElementById('carrozza');
+    carrozza.innerHTML = '--';
+
+    let cpCode = document.getElementById('cp-code');
+    cpCode.innerHTML = '--';
+
+    let ticketPrice = document.getElementById('ticket-price');
+    ticketPrice.innerHTML = '--';
+
+});
+
 
 
 
